@@ -24,7 +24,7 @@ Java
 ## Authors
 Tori Jameson,
 Kat Garnier,
-Jemaine Smith,
+Jamaine Smith,
 Eleonora Bogdanova,
 Ave Busby,
 Justin Griswold
