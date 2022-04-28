@@ -12,6 +12,13 @@ public class RegistrationController {
     @Autowired
     private RegistrationService service;
 
+    // TODO: figure out how to show Exception messages on the front end
+    // currently displays as "object Object" or something like that
+
+    // TODO: set user in session once registered/logged in
+    // TODO: add logout function and invalidate session
+    // https://education.launchcode.org/java-web-development/chapters/auth/login-registration-forms.html
+
     @PostMapping("/registration")
     public User registerUser(@RequestBody User user) throws Exception {
         String tempEmail = user.getEmail();

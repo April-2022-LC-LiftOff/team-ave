@@ -1,6 +1,7 @@
 <div class="container">
     <h2>Login</h2>
     <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <!-- need to figure out how to display exceptions correctly here from the registration controller -->
       <small class="text-danger">{{msg}}</small>
       <div class="form-group">
         <label for="email">Email:</label>
@@ -15,6 +16,7 @@
         <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required.</small>
       </div>
       <div class="checkbox">
+        <!-- this remember me part could be deleted, don't think it's necessary for mvp -->
         <label><input type="checkbox" name="remember"> Remember me</label>
       </div>
       <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info">Login</button>

@@ -5,4 +5,6 @@ export class User {
     password:string | undefined;
 
     constructor() {}
+
+    // need to add additional fields from the java class
 }
