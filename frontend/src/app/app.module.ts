@@ -13,6 +13,8 @@ import { AboutComponent } from './about/about.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
 import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence
     AboutComponent,
     TrackerComponent,
     OccurrenceComponent,
-    ReviewOccurrenceComponent
+    ReviewOccurrenceComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
