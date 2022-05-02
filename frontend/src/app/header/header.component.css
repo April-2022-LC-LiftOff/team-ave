@@ -4,10 +4,13 @@ background-color:#525E75;
 padding:20px;
 margin:0;
 position:absolute;
-with:95.3%;
+with:100%;
 top:0;
 }
 
-
+.container{
+margin:0;
+border:0;
+with:100%;}
 
 

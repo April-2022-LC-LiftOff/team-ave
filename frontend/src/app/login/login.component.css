@@ -1,0 +1,113 @@
+h2{
+color:#fff;
+text-align:center;
+align-items:center;
+padding:0px;
+font-family: "Josefin Sans", sans-serif;
+font-weight: 350;
+  letter-spacing: 2px;
+}
+
+.container{
+display:flex;
+flex-direction:column;
+background-color:#78938A;
+padding:0;
+margin:0;
+color:#fff;
+justify-content:center;
+height:100vh;
+margin:100px;
+background-size: cover;
+padding:30px;
+margin:0;
+}
+
+
+.box{
+flex:1;}
+
+.box-1{
+padding:5px;
+flex:1;}
+
+form{
+display: flex;
+flex-direction:column;
+align-items:center;
+}
+
+.form-group{
+margin:0px;
+padding:0;
+}
+.form-group input{
+  width: 500px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  border: 2.5px solid tomato;
+  transition: transform 0.3s;
+  background-color: transparent;
+}
+.form-group input:hover{
+transform: translateY(-4px);
+}
+.form-group input:active {
+  transform: translateY(0);
+}
+.form-group label{
+color:#fff;
+padding-bottom:2px;
+letter-spacing: 1px;
+padding-left:12px;
+}
+
+.form-group{
+margin:7px;
+}
+
+.checkbox label{
+letter-spacing:1px;
+padding:3px;
+margin: 0px;
+}
+
+.btn{
+width: 170px;
+  padding: 10px 15px;
+  margin: 0px;
+  border-radius: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid tomato;
+  transition: transform 0.3s;
+  background-color: tomato;
+  cursor: pointer;
+}
+.have-account{
+font-family: "Josefin Sans", sans-serif;
+cursor: pointer;
+letter-spacing:0.5px;
+color:#525E75;
+position:absolute;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+
