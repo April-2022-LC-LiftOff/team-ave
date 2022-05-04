@@ -53,7 +53,7 @@ public class User extends AbstractEntity{
         return team;
     }
 
-    public void setGroup(Team team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 }
