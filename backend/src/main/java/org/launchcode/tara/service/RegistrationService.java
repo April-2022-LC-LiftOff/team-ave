@@ -1,7 +1,8 @@
 package org.launchcode.tara.service;
 
 import org.launchcode.tara.model.User;
-import org.launchcode.tara.repository.RegistrationRepository;
+
+import org.launchcode.tara.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class RegistrationService {
 
     @Autowired
-    private RegistrationRepository repo;
+    private UserRepository repo;
 
     public User saveUser(User user) {
         return repo.save(user);

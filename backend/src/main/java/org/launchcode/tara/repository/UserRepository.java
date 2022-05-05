@@ -4,7 +4,10 @@ import org.launchcode.tara.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
+    public User findByEmail(String email);
 
-    User findByUserId(int id);
+    public User findByEmailAndPassword(String email, String password);
+
+  
 
 }

@@ -2,7 +2,7 @@ package org.launchcode.tara.service;
 
 
 import org.launchcode.tara.model.User;
-import org.launchcode.tara.repository.LoginRepository;
+import org.launchcode.tara.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class LoginService {
 
     @Autowired
-    private LoginRepository logRepo;
+    private UserRepository logRepo;
 
     public User fetchUserByEmail(String email) { return logRepo.findByEmail(email);}
 
