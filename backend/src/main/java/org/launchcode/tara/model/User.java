@@ -2,6 +2,7 @@ package org.launchcode.tara.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,6 +14,9 @@ public class User extends AbstractEntity{
 
     @ManyToOne
     private Team team;
+
+    @OneToMany(mappedBy = "user")
+    private final List<InstanceLog> instancelog =new ArrayList<>();
 
     public User() {
     }
@@ -55,5 +59,9 @@ public class User extends AbstractEntity{
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public List<InstanceLog> getInstancelog() {
+        return instancelog;
     }
 }
