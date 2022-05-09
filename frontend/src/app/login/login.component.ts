@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
-import { RegistrationService } from '../registration.service';
+import { LoginService } from '../service/login.service';
 import { User } from '../user';
 
 @Component({
