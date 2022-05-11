@@ -3,7 +3,9 @@ package org.launchcode.tara.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User extends AbstractEntity{
@@ -18,16 +20,20 @@ public class User extends AbstractEntity{
     @OneToMany(mappedBy = "user")
     private final List<InstanceLog> instancelog =new ArrayList<>();
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
+
     public User() {
     }
 
     public User( String email, String username, String password) {
-
         this.email = email;
         this.username = username;
         this.password = password;
     }
-
 
     public String getEmail() {
         return email;
@@ -63,5 +69,12 @@ public class User extends AbstractEntity{
 
     public List<InstanceLog> getInstancelog() {
         return instancelog;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

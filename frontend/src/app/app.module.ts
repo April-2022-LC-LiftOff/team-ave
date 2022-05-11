@@ -15,6 +15,9 @@ import { OccurrenceComponent } from './occurrence/occurrence.component';
 import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence.component';
 
 import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardUserComponent } from './board-user/board-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-l
     TrackerComponent,
     OccurrenceComponent,
     ReviewOccurrenceComponent,
-    OccurrenceLogComponent
+    OccurrenceLogComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardUserComponent
   ],
   imports: [
     BrowserModule,
