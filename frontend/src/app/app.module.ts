@@ -18,6 +18,9 @@ import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-l
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CrisisComponent } from './crisis/crisis.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { BoardUserComponent } from './board-user/board-user.component';
     OccurrenceLogComponent,
     ProfileComponent,
     BoardAdminComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    HeaderComponent,
+    FooterComponent,
+    CrisisComponent
   ],
   imports: [
     BrowserModule,

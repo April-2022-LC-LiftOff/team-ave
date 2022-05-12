@@ -1,4 +1,7 @@
-//package org.launchcode.tara.controller;
+//
+// keeping around just in case, but login and registration are both handled by authcontroller now
+//
+// package org.launchcode.tara.controller;
 //
 //import org.launchcode.tara.model.User;
 //import org.launchcode.tara.service.RegistrationService;
