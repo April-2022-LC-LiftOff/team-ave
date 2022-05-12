@@ -14,6 +14,8 @@ import { TrackerComponent } from './tracker/tracker.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
 import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence.component';
 
+import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence
     AboutComponent,
     TrackerComponent,
     OccurrenceComponent,
-    ReviewOccurrenceComponent
+    ReviewOccurrenceComponent,
+    OccurrenceLogComponent
   ],
   imports: [
     BrowserModule,

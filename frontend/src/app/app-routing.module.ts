@@ -6,6 +6,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
+import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TrackerComponent } from './tracker/tracker.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'friends', component: FriendsComponent},
   {path: 'tracker', component: TrackerComponent},
   {path: 'occurrence', component: OccurrenceComponent},
+  {path: 'occurrence/log', component: OccurrenceLogComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+<div class="oc-container">
+    <form #occcurrenceLog="ngForm" (ngSubmit)="createOccurrence()">
+
+        <div class="form-group">
+            <label for="location">Where did this take place?</label>
+            <input type="text" class="form-control" placeholder="location" name="location" [(ngModel)]="occurrence.location"> 
+        </div>
+        <div class="form-group">
+            <label for="date">When did this take place?</label>
+            <input type="date" class="form-control" placeholder="date" name="date" [(ngModel)]="occurrence.date"> 
+        </div>
+        <div class="form-group">
+            <label for="stressor">What stressors were involved?</label>
+            <input type="text" class="form-control" placeholder="stressor" name="stressors" [(ngModel)]="occurrence.stressor"> 
+        </div>
+        <div class="form-group">
+            <label for="deescalation">How were you able to deescalate?</label>
+            <input type="text" class="form-control" placeholder="deescalation" name="deescalation" [(ngModel)]="occurrence.deescalation"> 
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
