@@ -20,16 +20,16 @@ import java.util.Set;
 public class User extends AbstractEntity {
 
     @NotBlank
-//    @Size(max = 50)
-//    @Email
-    private String email;
-
-    @NotBlank
-//    @Size(max = 20)
+    @Size(max = 20)
     private String username;
 
     @NotBlank
-//    @Size(max = 120)
+    @Size(max = 50)
+    @Email
+    private String email;
+
+    @NotBlank
+    @Size(max = 120)
     private String password;
 
     @ManyToOne
@@ -47,18 +47,10 @@ public class User extends AbstractEntity {
     public User() {
     }
 
-    public User( String email, String username, String password) {
-        this.email = email;
+    public User( String username, String email, String password) {
         this.username = username;
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
+        this.password = password;
     }
 
     public String getUsername() {
@@ -67,6 +59,14 @@ public class User extends AbstractEntity {
 
     public void setUsername(String userName) {
         this.username = userName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
