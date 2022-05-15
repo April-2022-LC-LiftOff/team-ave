@@ -162,6 +162,15 @@
           <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Passwords must be the same.</small>
         </div>
 
+        <div>
+          <label for="role">I am registering as...</label><br>
+          <input type="radio" id="ndUser" name="role" value="ndUser" [(ngModel)]="form.role" #role="ngModel" checked="checked" required>
+          <label for="ndUser">A neurodivergent user</label><br>
+
+          <input type="radio" id="helper" name="role" value="helper" [(ngModel)]="form.role" #role="ngModel">
+          <label for="helper">A user who wants to help another</label><br>
+        </div>
+
         <button [disabled]="f.form.invalid" type="submit" class="btn ">Register</button>
 
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
