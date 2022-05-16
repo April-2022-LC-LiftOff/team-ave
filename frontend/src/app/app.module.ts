@@ -14,6 +14,14 @@ import { TrackerComponent } from './tracker/tracker.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
 import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence.component';
 
+import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CrisisComponent } from './crisis/crisis.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +32,14 @@ import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence
     AboutComponent,
     TrackerComponent,
     OccurrenceComponent,
-    ReviewOccurrenceComponent
+    ReviewOccurrenceComponent,
+    OccurrenceLogComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardUserComponent,
+    HeaderComponent,
+    FooterComponent,
+    CrisisComponent
   ],
   imports: [
     BrowserModule,
