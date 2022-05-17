@@ -8,9 +8,7 @@ import java.util.Optional;
 
 public interface InstanceLogRepository extends JpaRepository<InstanceLog, Integer> {
 
-    public InstanceLog findInstanceByUser(User user);
-
-    void deleteInstanceById(int id);
-
     Optional<InstanceLog> findInstanceLogById(int id);
+
+    Optional<InstanceLog>findByUsername(String username);
 }

@@ -1,6 +1,7 @@
 package org.launchcode.tara.service;
 
 
+import org.launchcode.tara.dto.InstanceLogDto;
 import org.launchcode.tara.exception.InstanceNotFoundException;
 import org.launchcode.tara.model.InstanceLog;
 import org.launchcode.tara.repository.InstanceLogRepository;
@@ -15,22 +16,11 @@ public class InstanceLogService {
     @Autowired
     private InstanceLogRepository repo;
 
-    public Object createInstanceLog(InstanceLog instanceLog) {
-        return  repo.save(instanceLog);
+    public void createLog(InstanceLogDto instanceLogDto){
+        InstanceLog instanceLog = new InstanceLog();
     }
 
-    public Object updateInstanceLog(InstanceLog instanceLog){
-        return repo.save(instanceLog);
-    }
 
-    public void deleteInstanceLog(InstanceLog instanceLog){
-        repo.deleteInstanceById(instanceLog.getId());
-    }
 
-    public Optional<InstanceLog> findInstanceById(int id){
-        return Optional.ofNullable(repo.findInstanceLogById(id)
-                .orElseThrow(() -> new InstanceNotFoundException("Instance not found")));
-
-    }
 
 }

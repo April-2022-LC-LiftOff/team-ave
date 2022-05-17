@@ -3,74 +3,51 @@ package org.launchcode.tara.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class InstanceLog extends AbstractEntity{
 
-    private String location;
+    private Instant createdDate;
 
-    private String stressor;
-
-    @ManyToOne
+    @ManyToOne(fetch= FetchType.LAZY)
     private User user;
 
-    private Date date;
-    private String deescalation;
+    @NotBlank(message="please name your log")
+    private String logName;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Instance> instances = new ArrayList<>();
 
     public InstanceLog(){}
 
-    public InstanceLog(String location, String stressor, User user,
-                       Date date, String deescalation){
-        this.location=location;
-        this.stressor=stressor;
+    public InstanceLog(User user,
+                       String logName,
+                       Instant createdDate,
+                       Instance instances){
         this.user=user;
-        this.date=date;
-        this.deescalation=deescalation;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getStressor() {
-        return stressor;
-    }
-
-    public void setStressor(String stressor) {
-        this.stressor = stressor;
+        this.logName=logName;
+        this.createdDate=createdDate;
+        this.instances = (List<Instance>) instances;
     }
 
     public User getUser() {
         return user;
     }
-
     public void setUser(User user) {
         this.user = user;
     }
-    @DateTimeFormat(pattern="MM/dd/yyyy")
-    public Date getDate() {
-        return date;
-    }
+    public Instant getCreatedDate() {return createdDate;}
+    public void setCreatedDate(Instant createdDate) {this.createdDate = createdDate;}
+    public String getLogName() {return logName;}
+    public void setLogName(String logName) {this.logName = logName;}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    public List<Instance> getInstances() {return instances;}
 
-    public String getDeescalation() {
-        return deescalation;
-    }
-
-    public void setDeescalation(String deescalation) {
-        this.deescalation = deescalation;
-    }
-
-
+    public void setInstances(List<Instance> instances) {this.instances = instances;}
 }
