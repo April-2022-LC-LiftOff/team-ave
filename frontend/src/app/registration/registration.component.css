@@ -7,7 +7,7 @@ h2 {
     font-weight: 350;
     letter-spacing: 2px;
 }
-    
+
 .registration-container {
     display:flex;
     flex-direction:column;
@@ -16,33 +16,33 @@ h2 {
     margin:0;
     color:#fff;
     justify-content:center;
-    height:100vh;
+    /*height:100vh;*/
     margin:100px;
     background-size: cover;
     padding:30px;
     margin:0;
-}    
-    
+}
+
 .box {
     flex:1;
 }
-    
+
 .box-1 {
     padding:5px;
     flex:1;
 }
-    
+
 form {
     display: flex;
     flex-direction:column;
     align-items:center;
 }
-    
+
 .form-group {
     margin:0px;
     padding:0;
 }
-    
+
 .form-group input {
     width: 500px;
     padding: 10px 15px;
@@ -56,33 +56,43 @@ form {
     transition: transform 0.3s;
     background-color: transparent;
 }
-    
+
 .form-group input:hover{
     transform: translateY(-4px);
 }
-    
+
 .form-group input:active {
     transform: translateY(0);
-    
+    background-color: #92BA92;
 }
-    
+
+
 .form-group label{
     color:#fff;
     padding-bottom:2px;
     letter-spacing: 1px;
     padding-left:12px;
 }
-    
+
 .form-group{
     margin:7px;
 }
-    
-.checkbox label{
+
+.form-group label{
     letter-spacing:1px;
     padding:3px;
     margin: 0px;
 }
-    
+.checkbox{
+margin:7px;
+}
+.checkbox label{
+    letter-spacing:1px;
+    padding:3px;
+    margin: 0px;
+    cursor: pointer;
+}
+
 .btn{
     width: 170px;
     padding: 10px 15px;
@@ -99,7 +109,7 @@ form {
     background-color: tomato;
     cursor: pointer;
 }
-    
+
 .have-account {
     font-family: "Josefin Sans", sans-serif;
     cursor: pointer;
@@ -107,11 +117,11 @@ form {
     color:#525E75;
     position:absolute;
 }
-    
+
 .btn:hover {
     transform: translateY(-4px);
 }
-    
+
 .btn:active {
     transform: translateY(0);
 }

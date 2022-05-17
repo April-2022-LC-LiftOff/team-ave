@@ -5,7 +5,7 @@
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.email" required #email="ngModel"
-        [class.is-invalid]="email.invalid && email.touched"> 
+        [class.is-invalid]="email.invalid && email.touched">
         <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required.</small>
       </div>
       <div class="form-group">
@@ -161,7 +161,6 @@
                  [class.is-invalid]="cpassword.invalid && cpassword.touched">
           <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Passwords must be the same.</small>
         </div>
-
         <div>
           <label for="role">I am registering as...</label><br>
           <input type="radio" id="ndUser" name="role" value="ndUser" [(ngModel)]="form.role" #role="ngModel" checked="checked" required>
@@ -169,7 +168,7 @@
 
           <input type="radio" id="helper" name="role" value="helper" [(ngModel)]="form.role" #role="ngModel">
           <label for="helper">A user who wants to help another</label><br>
-        </div>
+
 
         <button [disabled]="f.form.invalid" type="submit" class="btn ">Register</button>
 
@@ -182,7 +181,7 @@
         Your registration is successful!
       </div>
     </div>
-  
+
     <div class="box-1" >
       <small class="have-account">Already have an account? <a [routerLink]="['/login']">Login here.</a></small>
     </div>
