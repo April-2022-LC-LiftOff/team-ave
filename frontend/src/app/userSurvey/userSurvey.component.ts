@@ -1,19 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-userSurvey',
-  templateUrl: './userSurvey.component.html',
-  styleUrls: ['./userSurvey.component.css']
-})
-export class OccurrenceComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-
 class TagInput {
     public target: any;
     public tags: Array<string> = [];
