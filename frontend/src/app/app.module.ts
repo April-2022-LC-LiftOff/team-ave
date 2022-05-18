@@ -21,7 +21,6 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CrisisComponent } from './crisis/crisis.component';
-import { PostRegistrationComponent } from './registration/post-registration/post-registration.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +39,7 @@ import { PostRegistrationComponent } from './registration/post-registration/post
     BoardUserComponent,
     HeaderComponent,
     FooterComponent,
-    CrisisComponent,
-    PostRegistrationComponent
+    CrisisComponent
   ],
   imports: [
     BrowserModule,

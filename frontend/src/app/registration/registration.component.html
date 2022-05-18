@@ -1,188 +1,74 @@
-<!-- <div class="container">
+<div class="registration-container">
+  <div class="box">
     <h2>Register for an Account</h2>
-    <form #registerform="ngForm" (ngSubmit)="registerUser()">
-      <small class="text-danger">{{msg}}</small>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.email" required #email="ngModel"
-        [class.is-invalid]="email.invalid && email.touched">
-        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required.</small>
-      </div>
+  </div>
+  <div class="box" >
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" class="form-control" placeholder="Enter username" name="username" [(ngModel)]="user.username" required #username="ngModel"
-        [class.is-invalid]="username.invalid && username.touched">
+        <input type="text" class="form-control" placeholder="Enter username" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel"
+          [class.is-invalid]="username.invalid && username.touched">
         <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is required.</small>
+        <div class="alert-danger" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors['required']">Username is required</div>
+          <div *ngIf="username.errors['minlength']">Username must be at least 3 characters</div>
+          <div *ngIf="username.errors['maxlength']">Username must be at most 20 characters</div>
+        </div>
       </div>
+
       <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="user.password" required #password="ngModel"
-        [class.is-invalid]="password.invalid && password.touched">
-        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required.</small>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="form.email" required email #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched">
+        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required.</small>
+        <div class="alert-danger" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors['required']">Email is required</div>
+          <div *ngIf="email.errors['email']">Email must be a valid email address</div>
+        </div>
       </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched">
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required.</small>
+        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+        </div>
+      </div>
+
       <div class="form-group">
         <label for="pwd">Confirm Password:</label>
-        <input type="password" class="form-control" placeholder="Enter password" name="cpassword" #cpassword="ngModel" (ngModel)="user.password" required #password="ngModel"
-        [class.is-invalid]="cpassword.invalid && cpassword.touched">
+        <input type="password" class="form-control" placeholder="Enter password" name="cpassword" #cpassword="ngModel" (ngModel)="form.password" required #password="ngModel"
+               [class.is-invalid]="cpassword.invalid && cpassword.touched">
         <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Passwords must be the same.</small>
       </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="remember"> Remember me</label>
+      <div>
+
+        <label for="role">I am registering as...</label><br>
+        <input type="radio" id="ndUser" name="role" value="ndUser" [(ngModel)]="form.role" #role="ngModel" checked="checked" required>
+        <label for="ndUser">A neurodivergent user</label><br>
+
+        <input type="radio" id="helper" name="role" value="helper" [(ngModel)]="form.role" #role="ngModel">
+        <label for="helper">A user who wants to help another</label><br>
+
       </div>
-      <button [disabled]="registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+
+      <button [disabled]="f.form.invalid" type="submit" class="btn ">Register</button>
+
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Registration failed!<br />{{ errorMessage }}
+      </div>
+
     </form>
-    <small>Already have an account? <a [routerLink]="['/login']">Login here.</a></small>
-  </div> -->
-
-  <!-- <div class="col-md-12">
-    <div class="card card-container">
-      <form
-        *ngIf="!isSuccessful"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-      >
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            [(ngModel)]="form.username"
-            required
-            minlength="3"
-            maxlength="20"
-            #username="ngModel"
-          />
-          <div class="alert-danger" *ngIf="username.errors && f.submitted">
-            <div *ngIf="username.errors['required']">Username is required</div>
-            <div *ngIf="username.errors['minlength']">
-              Username must be at least 3 characters
-            </div>
-            <div *ngIf="username.errors['maxlength']">
-              Username must be at most 20 characters
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            [(ngModel)]="form.email"
-            required
-            email
-            #email="ngModel"
-          />
-          <div class="alert-danger" *ngIf="email.errors && f.submitted">
-            <div *ngIf="email.errors['required']">Email is required</div>
-            <div *ngIf="email.errors['email']">
-              Email must be a valid email address
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            [(ngModel)]="form.password"
-            required
-            minlength="6"
-            #password="ngModel"
-          />
-          <div class="alert-danger" *ngIf="password.errors && f.submitted">
-            <div *ngIf="password.errors['required']">Password is required</div>
-            <div *ngIf="password.errors['minlength']">
-              Password must be at least 6 characters
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
-        </div>
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-          Signup failed!<br />{{ errorMessage }}
-        </div>
-      </form>
-      <div class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful!
-      </div>
-    </div>
-  </div> -->
-
-  <div class="registration-container">
-    <div class="box">
-      <h2>Register for an Account</h2>
-    </div>
-    <div class="box" >
-      <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" class="form-control" placeholder="Enter username" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel"
-            [class.is-invalid]="username.invalid && username.touched">
-          <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is required.</small>
-          <div class="alert-danger" *ngIf="username.errors && f.submitted">
-            <div *ngIf="username.errors['required']">Username is required</div>
-            <div *ngIf="username.errors['minlength']">Username must be at least 3 characters</div>
-            <div *ngIf="username.errors['maxlength']">Username must be at most 20 characters</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="form.email" required email #email="ngModel"
-            [class.is-invalid]="email.invalid && email.touched">
-          <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required.</small>
-          <div class="alert-danger" *ngIf="email.errors && f.submitted">
-            <div *ngIf="email.errors['required']">Email is required</div>
-            <div *ngIf="email.errors['email']">Email must be a valid email address</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel"
-            [class.is-invalid]="password.invalid && password.touched">
-          <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required.</small>
-          <div class="alert-danger" *ngIf="password.errors && f.submitted">
-            <div *ngIf="password.errors['required']">Password is required</div>
-            <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="pwd">Confirm Password:</label>
-          <input type="password" class="form-control" placeholder="Enter password" name="cpassword" #cpassword="ngModel" (ngModel)="form.password" required #password="ngModel"
-                 [class.is-invalid]="cpassword.invalid && cpassword.touched">
-          <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Passwords must be the same.</small>
-        </div>
-        <div>
-          <label for="role">I am registering as...</label><br>
-          <input type="radio" id="ndUser" name="role" value="ndUser" [(ngModel)]="form.role" #role="ngModel" checked="checked" required>
-          <label for="ndUser">A neurodivergent user</label><br>
-
-          <input type="radio" id="helper" name="role" value="helper" [(ngModel)]="form.role" #role="ngModel">
-          <label for="helper">A user who wants to help another</label><br>
-
-
-        <button [disabled]="f.form.invalid" type="submit" class="btn ">Register</button>
-
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-          Registration failed!<br />{{ errorMessage }}
-        </div>
-
-      </form>
-      <div class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful!
-      </div>
-    </div>
-
-    <div class="box-1" >
-      <small class="have-account">Already have an account? <a [routerLink]="['/login']">Login here.</a></small>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
     </div>
   </div>
+
+  <div class="box-1" >
+    <small class="have-account">Already have an account? <a [routerLink]="['/login']">Login here.</a></small>
+  </div>
+</div>
