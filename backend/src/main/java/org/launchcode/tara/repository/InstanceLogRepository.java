@@ -10,5 +10,5 @@ public interface InstanceLogRepository extends JpaRepository<InstanceLog, Intege
 
     Optional<InstanceLog> findInstanceLogById(int id);
 
-    Optional<InstanceLog>findByUsername(String username);
+    Optional<InstanceLog>findByUserId(String userId);
 }
