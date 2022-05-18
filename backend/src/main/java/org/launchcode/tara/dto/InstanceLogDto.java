@@ -13,7 +13,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class InstanceLogDto {
 
 
+    private int id;
     private String name;
     private int userId;
+    private int numberOfInstances;
 
 }
