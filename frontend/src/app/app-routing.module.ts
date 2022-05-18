@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { TrackerComponent } from './tracker/tracker.component';
+import { UserSurveyComponent } from './user-survey/user-survey.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,8 +15,8 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'about', component: AboutComponent},
   {path: 'friends', component: FriendsComponent},
-  {path: 'tracker', component: TrackerComponent},
   {path: 'occurrence', component: OccurrenceComponent},
+  {path: 'survey', component: UserSurveyComponent}
 ];
 
 @NgModule({
