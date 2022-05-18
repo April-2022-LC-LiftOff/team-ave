@@ -33,14 +33,11 @@ public class InstanceLogService {
         return instanceLogDto;
     }
 
+
+
     public InstanceLogDto getInstanceLog(int id){
         InstanceLog instanceLog = instanceLogRepository.findInstanceLogById(id)
                 .orElseThrow(()-> new InstanceLogNotFoundException("Your Occurrence log was not found"));
         return instanceLogMapper.mapInstanceLogToDto(instanceLog);
     }
-
-
-
-
-
 }

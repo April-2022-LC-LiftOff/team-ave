@@ -22,6 +22,4 @@ public interface InstanceLogMapper {
     @InheritInverseConfiguration
     @Mapping(target = "instances", ignore = true)
     InstanceLog mapDtoToInstanceLog(InstanceLogDto instanceLog);
-
-
 }

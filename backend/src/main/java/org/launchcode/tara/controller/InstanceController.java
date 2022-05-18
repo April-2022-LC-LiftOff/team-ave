@@ -16,9 +16,9 @@ public class InstanceController {
     @Autowired
     private InstanceLogService service;
 
-    @PostMapping("/occurrence/log")
-    public InstanceLog createInstance(@RequestBody InstanceLog instanceLog){
-        service.createInstanceLog(instanceLog);
-        return instanceLog;
-    }
+//    @PostMapping("/occurrence/log")
+//    public InstanceLog createInstance(@RequestBody InstanceLog instanceLog){
+//        service.createInstanceLog(instanceLog);
+//        return instanceLog;
+//    }
 }

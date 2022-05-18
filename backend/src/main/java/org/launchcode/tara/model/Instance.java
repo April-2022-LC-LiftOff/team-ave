@@ -23,7 +23,7 @@ public class Instance extends AbstractEntity{
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "instance_log_id")
+    @JoinColumn(name = "instanceLog_id")
     private InstanceLog instanceLog;
 
     public Instance(){}
