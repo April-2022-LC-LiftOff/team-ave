@@ -18,6 +18,7 @@ public class OccurrenceLog extends AbstractEntity{
     private User user;
 
     private Date date;
+
     private String destressors;
 
     public OccurrenceLog(){}

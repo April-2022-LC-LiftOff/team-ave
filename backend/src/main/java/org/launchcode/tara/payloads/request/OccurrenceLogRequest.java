@@ -1,7 +1,5 @@
 package org.launchcode.tara.payloads.request;
 
-import org.launchcode.tara.model.User;
-
 import java.util.Date;
 
 public class OccurrenceLogRequest {
