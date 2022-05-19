@@ -6,6 +6,7 @@ import org.launchcode.tara.model.OccurrenceLog;
 import org.launchcode.tara.repository.OccurrenceLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -27,10 +28,10 @@ public class OccurrenceLogService {
         repo.deleteInstanceById(occurrenceLog.getId());
     }
 
+    @Transactional
     public Optional<OccurrenceLog> findInstanceById(int id){
         return Optional.ofNullable(repo.findInstanceLogById(id)
                 .orElseThrow(() -> new InstanceNotFoundException("Instance not found")));
-
     }
 
 }

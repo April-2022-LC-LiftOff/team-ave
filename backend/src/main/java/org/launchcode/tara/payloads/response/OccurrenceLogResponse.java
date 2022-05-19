@@ -1,14 +1,18 @@
-package org.launchcode.tara.payloads.request;
+package org.launchcode.tara.payloads.response;
+
+import org.launchcode.tara.model.User;
 
 import java.util.Date;
-//DTO that us used to map the Occurrence log to the model for the database
-public class OccurrenceLogRequest {
 
+public class OccurrenceLogResponse {
     private String location;
     private Date date;
     private String stressors;
     private String destressors;
     private int userId;
+
+    public OccurrenceLogResponse(Date date, String location, String stressors, String destressors, User user) {
+    }
 
     public String getLocation() {
         return location;
@@ -49,4 +53,5 @@ public class OccurrenceLogRequest {
     public void setUser(int userId) {
         this.userId = userId;
     }
+
 }

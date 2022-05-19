@@ -47,6 +47,7 @@ public class OccurrenceLog extends AbstractEntity{
     public String getStressors() {
         return stressors;
     }
+
     public User getUser() {
         return user;
     }
