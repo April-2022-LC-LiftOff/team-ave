@@ -21,9 +21,11 @@ public abstract class InstanceMapper {
     @Mapping(target = "deescalation", source="instanceDto.deescalation")
     public abstract Instance map(InstanceRequestDto instanceDto, InstanceLog instanceLog, User user);
 
-    @Mapping(target = "id", source="instance_id")
-    @Mapping(target = "InstanceLogName", source="instanceLog.name")
-    @Mapping(target = "userName", source="user.username")
-    public abstract InstanceResponseDto mapToDTO(Instance instance);
+    @Mapping(target = "id", source = "instance_id")
+    @Mapping(target = "InstanceLogName", source = "instanceLog.name")
+    @Mapping(target = "userName", source = "user.username")
+    public static InstanceResponseDto mapToDTO(Instance instance) {
+        return null;
+    }
 
 }

@@ -16,7 +16,7 @@ public class InstanceRequestDto {
     private String stressors;
     private String deescalation;
     private int userId;
-    private InstanceLog instanceLog;
+    private int instanceLog_id;
 
 
 
