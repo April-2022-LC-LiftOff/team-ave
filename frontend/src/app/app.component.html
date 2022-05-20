@@ -1,44 +1,6 @@
-<div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Tara</a>
+<app-header></app-header>
 
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home">Home </a>
-      </li>
-    </ul>
 
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-      <li class="nav-item">
-        <a href="/registration" class="nav-link" routerLink="registration">Sign Up</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-      <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="/friends" class="nav-link" routerLink="friends">Friends</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="/occurrence" class="nav-link" *ngIf="isLoggedIn" routerLink="occurrence">Occurrences</a>
-      </li>
-
-      <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">Log Out</a>
-      </li>
-    </ul>
-
-  </nav>
-</div>  
-
-<div>
   <router-outlet></router-outlet>
-</div>
+
+<app-footer></app-footer>
