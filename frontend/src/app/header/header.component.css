@@ -13,7 +13,7 @@ a {
     margin:0;
     letter-spacing: 2px;
     font-weight: 1000;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .nav-item{
@@ -23,10 +23,9 @@ a {
 
 img{
     margin: auto;
-        top: 0;
-        left: 0;
-    
-        bottom: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
     position:absolute;
     }
 
