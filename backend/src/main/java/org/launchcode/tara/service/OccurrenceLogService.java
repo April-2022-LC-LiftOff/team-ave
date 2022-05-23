@@ -21,7 +21,7 @@ import static java.util.stream.Collectors.toList;
 public class OccurrenceLogService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private OccurrenceLogRepository repo;
@@ -29,27 +29,22 @@ public class OccurrenceLogService {
 
     @Transactional
     public Object createOccurrenceLog(OccurrenceLog occurrenceLog) {
-        return  repo.save(occurrenceLog);
-    }
-    @Transactional
-    public Object updateOccurrenceLog(OccurrenceLog occurrenceLog){
         return repo.save(occurrenceLog);
     }
+
     @Transactional
-    public void deleteOccurrenceLog(OccurrenceLog occurrenceLog){
+    public Object updateOccurrenceLog(OccurrenceLog occurrenceLog) {
+        return repo.save(occurrenceLog);
+    }
+
+    @Transactional
+    public void deleteOccurrenceLog(OccurrenceLog occurrenceLog) {
         repo.deleteInstanceById(occurrenceLog.getId());
     }
 
     @Transactional
-    public Optional<OccurrenceLog> findInstanceById(int id){
+    public Optional<OccurrenceLog> findInstanceById(int id) {
         return Optional.ofNullable(repo.findInstanceLogById(id)
                 .orElseThrow(() -> new InstanceNotFoundException("Instance not found")));
     }
-
-//    @Transactional
-//    public List<OccurrenceLogResponse> getAllOccurrencesByUserId(int id){
-//
-//
-//    }
-
 }
