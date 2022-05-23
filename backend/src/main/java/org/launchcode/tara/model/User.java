@@ -35,12 +35,26 @@ public class User extends AbstractEntity {
     @ManyToOne
     private Team team;
 
+    @OneToMany(mappedBy = "user")
+    private List<OccurrenceLog> occurrenceLogs = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name = "occurrence_list_id")
+    private OccurrenceList occurrenceList;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    public OccurrenceList getOccurrenceList() {
+        return occurrenceList;
+    }
+
+    public void setOccurrenceList(OccurrenceList occurrenceList) {
+        this.occurrenceList = occurrenceList;
+    }
 
     public User() {
     }
@@ -90,6 +104,11 @@ public class User extends AbstractEntity {
         this.roles = roles;
     }
 
+    public List<OccurrenceLog> getOccurrenceLogs() {
+        return occurrenceLogs;
+    }
 
-
+    public void setOccurrenceLogs(List<OccurrenceLog> occurrenceLogs) {
+        this.occurrenceLogs = occurrenceLogs;
+    }
 }

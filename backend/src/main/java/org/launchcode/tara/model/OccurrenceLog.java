@@ -15,6 +15,8 @@ public class OccurrenceLog extends AbstractEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private OccurrenceList occurrenceList;
 
     private Instant date;
 
