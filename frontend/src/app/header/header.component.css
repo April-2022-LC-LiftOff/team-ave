@@ -1,14 +1,41 @@
-p {
-    background-color:#525E75;
-    padding:20px;
-    margin:0;
-    position:absolute;
-    with:100%;
-    top:0;
-}
+
     
 .container {
     margin:0;
     border:0;
-    with:100%;
+    width:100%;
+    
 }
+a {
+    font-family: "Josefin Sans", sans-serif;
+    padding:0;
+    color: #525E75;
+    margin:0;
+    letter-spacing: 2px;
+    font-weight: 1000;
+    font-size: 20px;
+}
+
+.nav-item{
+    padding: 1px 15px;
+    margin: 0px;
+}
+
+img{
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position:absolute;
+    }
+
+    .container{
+    margin:0;
+    border:0;
+    width:100%;}
+    
+    nav{
+    background:#fff;
+    padding: 15px 25px;}
+    
+   

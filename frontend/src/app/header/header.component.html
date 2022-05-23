@@ -1,1 +1,49 @@
-<p><span>TARA</span></p>
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                <img src="/assets/img/tara_logo.png" alt="Tara logo">
+              </a>  
+
+         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" routerLinkActive="active">
+                <li class="nav-item">
+                  <a href="/home" class="nav-link" routerLink="home">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/crisis" class="nav-link" routerLink="crisis">Help </a>
+                  </li>
+              </ul>
+          
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="!isLoggedIn">
+                <li class="nav-item">
+                  <a href="/registration" class="nav-link active" routerLink="registration">Sign Up</a>
+                </li>
+          
+                <li class="nav-item">
+                  <a href="/login" class="nav-link active active" routerLink="login">Login</a>
+                </li>
+              </ul>
+          
+              <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+                <li class="nav-item active">
+                  <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+                </li>
+          
+                <li class="nav-item active">
+                  <a href="/friends" class="nav-link" routerLink="friends">Friends</a>
+                </li>
+          
+                <li class="nav-item active">
+                  <a href="/occurrence" class="nav-link" *ngIf="isLoggedIn" routerLink="occurrence">Occurrences</a>
+                </li>
+          
+                <li class="nav-item active">
+                  <a href class="nav-link" (click)="logout()">Log Out</a>
+                </li>
+              </ul>
+         </div>
+        </div>
+    </nav>
+ 
