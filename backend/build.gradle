@@ -18,7 +18,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }

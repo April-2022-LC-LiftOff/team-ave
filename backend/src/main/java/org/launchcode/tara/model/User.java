@@ -35,8 +35,6 @@ public class User extends AbstractEntity {
     @ManyToOne
     private Team team;
 
-    @OneToMany(mappedBy = "user")
-    private final List<InstanceLog> instancelog =new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
@@ -85,14 +83,13 @@ public class User extends AbstractEntity {
         this.team = team;
     }
 
-    public List<InstanceLog> getInstancelog() {
-        return instancelog;
-    }
-
     public Set<Role> getRoles() {
         return roles;
     }
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
+
 }
