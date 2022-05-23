@@ -35,9 +35,6 @@ public class User extends AbstractEntity {
     @ManyToOne
     private Team team;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private  List<OccurrenceLog> instancelog =new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
@@ -86,18 +83,13 @@ public class User extends AbstractEntity {
         this.team = team;
     }
 
-    public List<OccurrenceLog> getInstancelog() {
-        return instancelog;
-    }
-
-    public void setInstancelog(List<OccurrenceLog> instancelog) {
-        this.instancelog = instancelog;
-    }
-
     public Set<Role> getRoles() {
         return roles;
     }
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
+
 }

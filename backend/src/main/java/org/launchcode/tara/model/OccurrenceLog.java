@@ -1,9 +1,8 @@
 package org.launchcode.tara.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.time.Instant;
 import java.util.Date;
 
 @Entity
@@ -13,23 +12,22 @@ public class OccurrenceLog extends AbstractEntity{
 
     private String stressors;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    private Date date;
+
+    private Instant date;
 
     private String destressors;
 
     public OccurrenceLog(){}
 
-    public OccurrenceLog(String location, String stressors, User user,
-                         Date date, String destressors){
-        this.location=location;
-        this.stressors=stressors;
-        this.user=user;
-        this.date=date;
-        this.destressors=destressors;
+    public OccurrenceLog(String location, String stressors, User user, String destressors) {
+        this.location = location;
+        this.stressors = stressors;
+        this.user = user;
+        this.date = Instant.now();
+        this.destressors = destressors;
     }
 
     public OccurrenceLog(String location, Date date, String stressors, String destressors, User user) {
@@ -68,11 +66,11 @@ public class OccurrenceLog extends AbstractEntity{
         this.destressors = destressors;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public Instant getDate() {
+        return date;
     }
 
-    public Date getDate() { return date; }
-
-
+    public void setDate(Instant date) {
+        this.date = date;
+    }
 }

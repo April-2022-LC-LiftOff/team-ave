@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.springframework.web.servlet.function.ServerResponse.status;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -36,24 +38,29 @@ public class OccurrenceLogController {
         OccurrenceLog occurrenceLog = new OccurrenceLog(occurrenceLogRequest.getLocation(),
                 occurrenceLogRequest.getStressors(),
                 user,
-                occurrenceLogRequest.getDate(),
                 occurrenceLogRequest.getDestressors());
 
         occurrenceLogService.createOccurrenceLog(occurrenceLog);
         return occurrenceLog;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getOccurrenceById(@PathVariable int id){
-        OccurrenceLog occurrenceLog = occurrenceLogRepository.findInstanceLogById(id)
-                .orElseThrow(()-> new InstanceNotFoundException("Specific instance not found"));
-        return ResponseEntity.ok(new OccurrenceLogResponse(occurrenceLog.getDate(),
-                occurrenceLog.getLocation(),
-                occurrenceLog.getStressors(),
-                occurrenceLog.getDestressors(),
-                occurrenceLog.getUser()
-                ));
+//    @GetMapping("/{id}")
+//    public ResponseEntity<?> getOccurrenceById(@PathVariable int id){
+//        OccurrenceLog occurrenceLog = occurrenceLogRepository.findInstanceLogById(id)
+//                .orElseThrow(()-> new InstanceNotFoundException("Specific instance not found"));
+//        return ResponseEntity.ok(new OccurrenceLogResponse(occurrenceLog.getDate(),
+//                occurrenceLog.getLocation(),
+//                occurrenceLog.getStressors(),
+//                occurrenceLog.getDestressors(),
+//                occurrenceLog.getUser()
+//                ));
+//    }
+
+    @GetMapping("/list/{id}")
+    public ResponseEntity<List<OccurrenceLog>> occurrenceLogListByUserID(@PathVariable int id){
+        return (ResponseEntity<List<OccurrenceLog>>) occurrenceLogRepository.findAllByUserId(id);
     }
+
 
 
 }
