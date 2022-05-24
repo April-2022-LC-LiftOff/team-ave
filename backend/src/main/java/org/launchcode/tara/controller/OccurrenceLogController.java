@@ -44,6 +44,11 @@ public class OccurrenceLogController {
         return occurrenceLog;
     }
 
+    @GetMapping("/list/{id}")
+    public ResponseEntity<List<OccurrenceLog>> occurrenceLogListByUserID(@PathVariable int id){
+        return (ResponseEntity<List<OccurrenceLog>>) occurrenceLogRepository.findAllByUserId(id);
+    }
+
 //    @GetMapping("/{id}")
 //    public ResponseEntity<?> getOccurrenceById(@PathVariable int id){
 //        OccurrenceLog occurrenceLog = occurrenceLogRepository.findInstanceLogById(id)
@@ -55,12 +60,5 @@ public class OccurrenceLogController {
 //                occurrenceLog.getUser()
 //                ));
 //    }
-
-    @GetMapping("/list/{id}")
-    public ResponseEntity<List<OccurrenceLog>> occurrenceLogListByUserID(@PathVariable int id){
-        return (ResponseEntity<List<OccurrenceLog>>) occurrenceLogRepository.findAllByUserId(id);
-    }
-
-
 
 }
