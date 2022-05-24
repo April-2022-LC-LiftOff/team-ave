@@ -16,8 +16,6 @@ import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence
 
 import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CrisisComponent } from './crisis/crisis.component';
@@ -35,8 +33,6 @@ import { CrisisComponent } from './crisis/crisis.component';
     ReviewOccurrenceComponent,
     OccurrenceLogComponent,
     ProfileComponent,
-    BoardAdminComponent,
-    BoardUserComponent,
     HeaderComponent,
     FooterComponent,
     CrisisComponent

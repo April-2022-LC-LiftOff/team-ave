@@ -11,9 +11,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { CrisisComponent } from './crisis/crisis.component';
 
-import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -25,8 +22,6 @@ const routes: Routes = [
   { path: 'tracker', component: TrackerComponent},
   { path: 'occurrence', component: OccurrenceComponent},
   { path: 'occurrence/log', component: OccurrenceLogComponent},
-  { path: 'user', component: BoardUserComponent },
-  { path: 'admin', component: BoardAdminComponent },
   { path: 'crisis', component: CrisisComponent}
 ];
 

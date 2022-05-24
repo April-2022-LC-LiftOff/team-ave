@@ -5,9 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,12 +33,29 @@ public class User extends AbstractEntity {
     @ManyToOne
     private Team team;
 
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "tags",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> stressors = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "tags",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> destressors = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "tags",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> donots = new HashSet<>();
 
     public User() {
     }
@@ -90,6 +105,27 @@ public class User extends AbstractEntity {
         this.roles = roles;
     }
 
+    public Set<Tag> getStressors() {
+        return stressors;
+    }
 
+    public void setStressors(Set<Tag> stressors) {
+        this.stressors.add((Tag) stressors);
+    }
 
+    public Set<Tag> getDestressors() {
+        return destressors;
+    }
+
+    public void setDestressors(Set<Tag> destressors) {
+        this.destressors.add((Tag) destressors);
+    }
+
+    public Set<Tag> getDonots() {
+        return donots;
+    }
+
+    public void setDonots(Set<Tag> donots) {
+        this.donots.add((Tag) donots);
+    }
 }
