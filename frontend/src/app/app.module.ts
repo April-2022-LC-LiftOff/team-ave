@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { MatSelectModule} from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatIconModule} from '@angular/material/icon';
+import {ReactiveFormsModule} from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +25,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CrisisComponent } from './crisis/crisis.component';
+import { SurveyComponent } from './registration/survey/survey.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +42,19 @@ import { CrisisComponent } from './crisis/crisis.component';
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
-    CrisisComponent
+    CrisisComponent,
+    SurveyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
