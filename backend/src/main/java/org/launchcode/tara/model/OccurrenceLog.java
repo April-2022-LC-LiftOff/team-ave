@@ -24,12 +24,13 @@ public class OccurrenceLog extends AbstractEntity{
 
     public OccurrenceLog(){}
 
-    public OccurrenceLog(String location, String stressors, User user, String destressors) {
+    public OccurrenceLog(String location, String stressors, User user, String destressors, OccurrenceList occurrenceList) {
         this.location = location;
         this.stressors = stressors;
         this.user = user;
         this.date = Instant.now();
         this.destressors = destressors;
+        this.occurrenceList = occurrenceList;
     }
 
     public OccurrenceLog(String location, Date date, String stressors, String destressors, User user) {

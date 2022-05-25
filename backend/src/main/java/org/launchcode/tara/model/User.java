@@ -48,14 +48,6 @@ public class User extends AbstractEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public OccurrenceList getOccurrenceList() {
-        return occurrenceList;
-    }
-
-    public void setOccurrenceList(OccurrenceList occurrenceList) {
-        this.occurrenceList = occurrenceList;
-    }
-
     public User() {
     }
 
@@ -100,6 +92,7 @@ public class User extends AbstractEntity {
     public Set<Role> getRoles() {
         return roles;
     }
+
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
@@ -110,5 +103,13 @@ public class User extends AbstractEntity {
 
     public void setOccurrenceLogs(List<OccurrenceLog> occurrenceLogs) {
         this.occurrenceLogs = occurrenceLogs;
+    }
+
+    public OccurrenceList getOccurrenceList() {
+        return occurrenceList;
+    }
+
+    public void setOccurrenceList(OccurrenceList occurrenceList) {
+        this.occurrenceList = occurrenceList;
     }
 }

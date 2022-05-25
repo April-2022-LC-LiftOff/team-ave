@@ -12,12 +12,12 @@ public class Team extends AbstractEntity{
     private String name;
 
     @OneToMany(mappedBy="team")
-    private final List<User> users = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public Team(){}
 
-    public Team(String name){
-        this.name=name;
+    public Team(String name) {
+        this.name = name;
     }
 
     public String getName() {
@@ -31,4 +31,6 @@ public class Team extends AbstractEntity{
     public List<User> getUsers() {
         return users;
     }
+
+
 }

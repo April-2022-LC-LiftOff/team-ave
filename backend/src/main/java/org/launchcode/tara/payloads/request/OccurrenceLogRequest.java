@@ -40,4 +40,5 @@ public class OccurrenceLogRequest {
     public void setUser(int userId) {
         this.userId = userId;
     }
+
 }

@@ -6,16 +6,14 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
 
-import org.launchcode.tara.model.ERole;
-import org.launchcode.tara.model.OccurrenceList;
-import org.launchcode.tara.model.Role;
-import org.launchcode.tara.model.User;
+import org.launchcode.tara.model.*;
 import org.launchcode.tara.payloads.request.LoginRequest;
 import org.launchcode.tara.payloads.request.SignupRequest;
 import org.launchcode.tara.payloads.response.JwtResponse;
 import org.launchcode.tara.payloads.response.MessageResponse;
 import org.launchcode.tara.repository.OccurrenceListRepository;
 import org.launchcode.tara.repository.RoleRepository;
+import org.launchcode.tara.repository.TeamRepository;
 import org.launchcode.tara.repository.UserRepository;
 import org.launchcode.tara.security.jwt.JwtUtils;
 import org.launchcode.tara.security.services.UserDetailsImpl;
@@ -44,7 +42,7 @@ public class AuthController {
     OccurrenceListRepository occurrenceListRepository;
 
     @Autowired
-    OccurrenceListController occurrenceListController;
+    TeamRepository teamRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -73,6 +71,7 @@ public class AuthController {
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
+                userDetails.getOListId(),
                 roles));
     }
 
@@ -119,6 +118,8 @@ public class AuthController {
         userOccurrenceList.setUser(user);
         user.setOccurrenceList(userOccurrenceList);
         occurrenceListRepository.save(userOccurrenceList);
+
+
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class OccurenceListService {
+public class OccurrenceListService {
 
     @Autowired
     UserRepository userRepository;
@@ -23,13 +23,10 @@ public class OccurenceListService {
     @Transactional
     public Object createOccurrenceList(OccurrenceList occurrenceList) {
         return occurrenceListRepository.save(occurrenceList);
-
-
     }
 
     public OccurrenceList getOccurrenceList( int id ){
-        OccurrenceList occurrenceList = occurrenceListRepository.findListById(id);
-        return occurrenceList;
+        return occurrenceListRepository.findListById(id);
     }
 
 }
