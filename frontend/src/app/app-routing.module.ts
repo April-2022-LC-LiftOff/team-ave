@@ -27,7 +27,11 @@ const routes: Routes = [
   { path: 'occurrence/log', component: OccurrenceLogComponent},
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: 'crisis', component: CrisisComponent}
+  { path: 'crisis', component: CrisisComponent},
+  {
+    path:'new-module', 
+    loadChildren: () => import('src/app/new-module1/new-module1.module').then((m) => m.NewModule1Module)
+  }
 ];
 
 @NgModule({
