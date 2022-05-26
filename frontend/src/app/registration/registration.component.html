@@ -1,4 +1,4 @@
-<div class="registration-container">
+<div class="registration-container" *ngIf="!isLoggedIn">
   <div class="box">
     <h2>Register for an Account</h2>
   </div>
@@ -71,4 +71,8 @@
   <div class="box-1" >
     <small class="have-account">Already have an account? <a [routerLink]="['/login']">Login here.</a></small>
   </div>
+</div>
+
+<div *ngIf="isLoggedIn">
+  <survey></survey>
 </div>

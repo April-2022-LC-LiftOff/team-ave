@@ -1,6 +1,10 @@
 package org.launchcode.tara.payloads.response;
 
+import org.launchcode.tara.model.Tag;
+
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public class JwtResponse {
     private String token;
@@ -10,12 +14,22 @@ public class JwtResponse {
     private String email;
     private List<String> roles;
 
-    public JwtResponse(String accessToken, Integer id, String username, String email, List<String> roles) {
+    private List<String> stressors;
+
+    private List<String> helpers;
+
+    private List<String> donts;
+
+    public JwtResponse(String accessToken, Integer id, String username, String email,
+                       List<String> roles, List<String> stressors, List<String> helpers, List<String> donts) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
         this.roles = roles;
+        this.stressors=stressors;
+        this.helpers=helpers;
+        this.donts=donts;
     }
 
     public String getAccessToken() {
@@ -61,4 +75,18 @@ public class JwtResponse {
     public List<String> getRoles() {
         return roles;
     }
+
+    public List<String> getStressors() {
+        return stressors;
+    }
+
+    public List<String> getHelpers() {
+        return helpers;
+    }
+
+
+    public List<String> getDonts() {
+        return donts;
+    }
+
 }
