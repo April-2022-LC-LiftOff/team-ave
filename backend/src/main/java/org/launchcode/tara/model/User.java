@@ -5,9 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,12 +33,29 @@ public class User extends AbstractEntity {
     @ManyToOne
     private Team team;
 
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "stresstags",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> stressors = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "helptags",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> helpers = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "donttags",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> donts = new HashSet<>();
 
     public User() {
     }
@@ -90,6 +105,27 @@ public class User extends AbstractEntity {
         this.roles = roles;
     }
 
+    public Set<Tag> getStressors() {
+        return stressors;
+    }
 
+    public void setStressors(Tag stressors) {
+        this.stressors.add(stressors);
+    }
 
+    public Set<Tag> getHelpers() {
+        return helpers;
+    }
+
+    public void setHelpers(Tag helpers) {
+        this.helpers.add(helpers);
+    }
+
+    public Set<Tag> getDonts() {
+        return donts;
+    }
+
+    public void setDonts(Tag donts) {
+        this.donts.add(donts);
+    }
 }
