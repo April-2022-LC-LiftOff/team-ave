@@ -1,5 +1,6 @@
 package org.launchcode.tara.controller;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -61,12 +62,18 @@ public class AuthController {
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
+        List<String> stressors = new ArrayList<>(userDetails.getStressors());
+        List<String> helpers = new ArrayList<>(userDetails.getHelpers());
+        List<String> donts = new ArrayList<>(userDetails.getDonts());
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                roles));
-    }
+                roles,
+                stressors,
+                helpers,
+                donts));
+    };
 
     @PostMapping("/registration")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {

@@ -1,17 +1,24 @@
 package org.launchcode.tara.payloads.request;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 public class TagRequest {
+    @NotNull
     private int userId;
 
+    @NotBlank
     private String username;
+
 
     private ArrayList<String> stressors;
 
-    private ArrayList<String> destressors;
 
-    private ArrayList<String> donots;
+    private ArrayList<String> helpers;
+
+
+    private ArrayList<String> donts;
 
     public int getUserId() {
         return userId;
@@ -37,19 +44,19 @@ public class TagRequest {
         this.stressors = stressors;
     }
 
-    public ArrayList<String> getDestressors() {
-        return destressors;
+    public ArrayList<String> getHelpers() {
+        return helpers;
     }
 
-    public void setDestressors(ArrayList<String> destressors) {
-        this.destressors = destressors;
+    public void setHelpers(ArrayList<String> helpers) {
+        this.helpers = helpers;
     }
 
-    public ArrayList<String> getDonots() {
-        return donots;
+    public ArrayList<String> getDonts() {
+        return donts;
     }
 
-    public void setDonots(ArrayList<String> donots) {
-        this.donots = donots;
+    public void setDonts(ArrayList<String> donts) {
+        this.donts = donts;
     }
 }

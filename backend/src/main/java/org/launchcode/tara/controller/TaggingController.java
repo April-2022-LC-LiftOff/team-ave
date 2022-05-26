@@ -2,7 +2,6 @@ package org.launchcode.tara.controller;
 
 import org.launchcode.tara.model.Tag;
 import org.launchcode.tara.model.User;
-import org.launchcode.tara.payloads.request.SignupRequest;
 import org.launchcode.tara.payloads.request.TagRequest;
 import org.launchcode.tara.payloads.response.MessageResponse;
 import org.launchcode.tara.repository.TagRepository;
@@ -14,16 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/tags")
 public class TaggingController {
-
-    @Autowired
-    TagRequest tagRequest;
 
     @Autowired
     TagRepository tagRepository;
@@ -33,52 +28,64 @@ public class TaggingController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addTags(@Valid @RequestBody TagRequest tagRequest){
-        User currentUser = userRepository.getCurrentUser(tagRequest.getUsername());
+        User currentUser = userRepository.findByUsername(tagRequest.getUsername()).get();
 
         ArrayList<String> stressorsRequest = tagRequest.getStressors();
-        ArrayList<String> destressorsRequest = tagRequest.getDestressors();
-        ArrayList<String> donotsRequest = tagRequest.getDonots();
+        ArrayList<String> helpersRequest = tagRequest.getHelpers();
+        ArrayList<String> dontsRequest = tagRequest.getDonts();
 
         Set<Tag> stressors = new HashSet<>();
-        Set<Tag> destressors = new HashSet<>();
-        Set<Tag> donots = new HashSet<>();
+        Set<Tag> helpers = new HashSet<>();
+        Set<Tag> donts = new HashSet<>();
 
-        for (Integer i = 0; i < stressorsRequest.size(); i++) {
-            String newTag = stressorsRequest.get(i);
-            if (tagRepository.existsByName(newTag)) {
-                stressors.add(tagRepository.getByName(newTag));
-            } else {
-                Tag tag = new Tag(newTag);
-                tagRepository.save(tag);
-                stressors.add(tagRepository.getByName(newTag));
+        if (!(stressorsRequest == null)) {
+            for (Integer i = 0; i < stressorsRequest.size(); i++) {
+                String newTag = stressorsRequest.get(i);
+                if (tagRepository.existsByName(newTag)) {
+                    stressors.add(tagRepository.getByName(newTag));
+                } else {
+                    Tag tag = new Tag(newTag);
+                    tagRepository.save(tag);
+                    stressors.add(tagRepository.getByName(newTag));
+                }
             }
         }
 
-        for (Integer i = 0; i < destressorsRequest.size(); i++) {
-            String newTag = destressorsRequest.get(i);
-            if (tagRepository.existsByName(newTag)) {
-                destressors.add(tagRepository.getByName(newTag));
-            } else {
-                Tag tag = new Tag(newTag);
-                tagRepository.save(tag);
-                stressors.add(tagRepository.getByName(newTag));
+        if (!(helpersRequest == null)) {
+            for (Integer i = 0; i < helpersRequest.size(); i++) {
+                String newTag = helpersRequest.get(i);
+                if (tagRepository.existsByName(newTag)) {
+                    helpers.add(tagRepository.getByName(newTag));
+                } else {
+                    Tag tag = new Tag(newTag);
+                    tagRepository.save(tag);
+                    helpers.add(tagRepository.getByName(newTag));
+                }
             }
         }
 
-        for (Integer i = 0; i < donotsRequest.size(); i++) {
-            String newTag = donotsRequest.get(i);
-            if (tagRepository.existsByName(newTag)) {
-                donots.add(tagRepository.getByName(newTag));
-            } else {
-                Tag tag = new Tag(newTag);
-                tagRepository.save(tag);
-                stressors.add(tagRepository.getByName(newTag));
+        if (!(dontsRequest == null)) {
+            for (Integer i = 0; i < dontsRequest.size(); i++) {
+                String newTag = dontsRequest.get(i);
+                if (tagRepository.existsByName(newTag)) {
+                    donts.add(tagRepository.getByName(newTag));
+                } else {
+                    Tag tag = new Tag(newTag);
+                    tagRepository.save(tag);
+                    donts.add(tagRepository.getByName(newTag));
+                }
             }
         }
 
-        currentUser.setStressors(stressors);
-        currentUser.setDestressors(destressors);
-        currentUser.setDonots(donots);
+        for (Tag stressor : stressors) {
+            currentUser.setStressors(stressor);
+        }
+        for (Tag helper : helpers) {
+            currentUser.setHelpers(helper);
+        }
+        for (Tag dont : donts) {
+            currentUser.setDonts(dont);
+        }
 
         userRepository.save(currentUser);
         return ResponseEntity.ok(new MessageResponse("Successfully added tags!"));

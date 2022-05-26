@@ -16,7 +16,7 @@ export class TagsService {
   constructor(private http: HttpClient) { }
   
   addTags(stressors: string[], helpers: string[], donts: string[], userId: number, username: string): Observable<any> {
-    return this.http.post(AUTH_API + 'add', {
+    return this.http.post(AUTH_API + '/add', {
       stressors,
       helpers,
       donts,

@@ -40,22 +40,22 @@ public class User extends AbstractEntity {
     private Set<Role> roles = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "tags",
+    @JoinTable(	name = "stresstags",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private Set<Tag> stressors = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "tags",
+    @JoinTable(	name = "helptags",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    private Set<Tag> destressors = new HashSet<>();
+    private Set<Tag> helpers = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "tags",
+    @JoinTable(	name = "donttags",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    private Set<Tag> donots = new HashSet<>();
+    private Set<Tag> donts = new HashSet<>();
 
     public User() {
     }
@@ -109,23 +109,23 @@ public class User extends AbstractEntity {
         return stressors;
     }
 
-    public void setStressors(Set<Tag> stressors) {
-        this.stressors.add((Tag) stressors);
+    public void setStressors(Tag stressors) {
+        this.stressors.add(stressors);
     }
 
-    public Set<Tag> getDestressors() {
-        return destressors;
+    public Set<Tag> getHelpers() {
+        return helpers;
     }
 
-    public void setDestressors(Set<Tag> destressors) {
-        this.destressors.add((Tag) destressors);
+    public void setHelpers(Tag helpers) {
+        this.helpers.add(helpers);
     }
 
-    public Set<Tag> getDonots() {
-        return donots;
+    public Set<Tag> getDonts() {
+        return donts;
     }
 
-    public void setDonots(Set<Tag> donots) {
-        this.donots.add((Tag) donots);
+    public void setDonts(Tag donts) {
+        this.donts.add(donts);
     }
 }

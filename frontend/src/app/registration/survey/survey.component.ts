@@ -172,8 +172,10 @@ export class SurveyComponent {
     onSubmit(): void {
       const userId = this.currentUser.id;
       const username = this.currentUser.username;
-      const { stressors, helpers, donts } = this.form;
-      this.tagsService.addTags(stressors, helpers, donts, userId, username).subscribe(
+      const fstressors = this.stressors;
+      const fhelpers = this.helpers;
+      const fdonts = this.donts;
+      this.tagsService.addTags(fstressors, fhelpers, fdonts, userId, username).subscribe(
         data => {
           console.log(data);
           this.reloadPage();
