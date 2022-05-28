@@ -11,6 +11,11 @@ public interface OccurrenceLogRepository extends JpaRepository<OccurrenceLog, In
 
     public OccurrenceLog findInstanceByUser(User user);
 
+    static Optional<Iterable<OccurrenceLog>> findByUserId(int user_id) {
+
+        return null;
+    }
+
     void deleteInstanceById(int id);
 
     Optional<OccurrenceLog> findInstanceLogById(int id);
