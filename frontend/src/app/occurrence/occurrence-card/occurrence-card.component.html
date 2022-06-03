@@ -1,0 +1,26 @@
+<!--container template for each of the notes. -->
+<div #container class="occurrence-card-container">
+    
+      <div class="occurrence-card-content">
+        <h1 class="occurrence-card-title"> {{ id }} </h1>
+        <div class="occurrence-card-body">
+          <p #bodyText>
+            Date: {{ date }}
+          </p>
+          <p #bodyText>
+            Location: {{ location }}
+          </p>
+          <p #bodyText>
+            Stressors: {{stressors}}
+          </p>
+          <p #bodyText>
+            Destressors: {{destressors}}
+        </p>
+        <p #bodyText>
+          Description of the event: {{description}}
+      </p>
+          <div #truncator class="fade-out-truncation"></div>
+        </div>
+      </div>
+    
+  </div>

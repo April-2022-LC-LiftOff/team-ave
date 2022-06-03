@@ -1,3 +1,4 @@
+import { OccurrenceListComponent } from './occurrence/occurrence-list/occurrence-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -33,6 +34,8 @@ import { MatSelectModule} from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { OccurrenceCardComponent } from './occurrence/occurrence-card/occurrence-card.component';
 
 
 @NgModule({
@@ -47,6 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     OccurrenceComponent,
     ReviewOccurrenceComponent,
     OccurrenceLogComponent,
+    OccurrenceListComponent,
     ProfileComponent,
     BoardAdminComponent,
     BoardUserComponent,
@@ -54,11 +58,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     CrisisComponent,
     SurveyComponent,
+    OccurrenceCardComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,

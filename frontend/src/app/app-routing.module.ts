@@ -1,3 +1,4 @@
+import { OccurrenceListComponent } from './occurrence/occurrence-list/occurrence-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'tracker', component: TrackerComponent},
   { path: 'occurrence', component: OccurrenceComponent},
   { path: 'occurrence/log', component: OccurrenceLogComponent},
+  { path: 'occurrence/list/:id', component: OccurrenceListComponent},
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'crisis', component: CrisisComponent},

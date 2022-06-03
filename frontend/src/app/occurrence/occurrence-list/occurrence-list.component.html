@@ -1,0 +1,24 @@
+<div class="m-o-c">
+<div class="main-occurrences-container">
+<h1> Occurrences for {{currentUser.username}}?</h1>
+<div class="search-bar-container">
+    <div class="field">
+        <p class="control ">
+            <input #filterInput class="input" type="text" (keyup)="filter($any($event.target).value)" placeholder="filter occurrences"/>
+        </p>
+    </div>
+</div>
+
+<div class="occurrence-list">
+    <app-occurrence-card
+    *ngFor="let occurrence of filteredOccurrences;"
+    [id]="occurrence.id"
+    [date]="occurrence.date"
+    [location]="occurrence.location"
+    [stressors]="occurrence.stressors"
+    [destressors]="occurrence.destressors"
+    [description]="occurrence.description"
+    ></app-occurrence-card>
+</div>
+</div>
+</div>

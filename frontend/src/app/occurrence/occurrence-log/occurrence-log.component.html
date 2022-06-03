@@ -3,20 +3,24 @@
 
         <div class="form-group">
             <label for="location">Where did this take place?</label>
-            <input type="text" class="form-control" placeholder="location" name="location" [(ngModel)]="occurrence.location"> 
+            <input type="text" class="form-control" placeholder="location" name="location" [(ngModel)]="form.location"> 
         </div>
-        <div class="form-group">
-            <label for="date">When did this take place?</label>
-            <input type="date" class="form-control" placeholder="date" name="date" [(ngModel)]="occurrence.date"> 
-        </div>
+
         <div class="form-group">
             <label for="stressor">What stressors were involved?</label>
-            <input type="text" class="form-control" placeholder="stressor" name="stressors" [(ngModel)]="occurrence.stressor"> 
+            <input type="text" class="form-control" placeholder="stressors" name="stressors" [(ngModel)]="form.stressors"> 
         </div>
+
         <div class="form-group">
             <label for="deescalation">How were you able to deescalate?</label>
-            <input type="text" class="form-control" placeholder="deescalation" name="deescalation" [(ngModel)]="occurrence.deescalation"> 
+            <input type="text" class="form-control" placeholder="destressors" name="deescalation" [(ngModel)]="form.destressors"> 
         </div>
+
+        <div class="form-group">
+            <label for="description">how would you describe the event?</label>
+            <input type="textarea" class="form-control" placeholder="description" name="description" [(ngModel)]="form.description"> 
+        </div>
+        
         <button type="submit" class="btn btn-info">Submit</button>
     </form>
 </div>

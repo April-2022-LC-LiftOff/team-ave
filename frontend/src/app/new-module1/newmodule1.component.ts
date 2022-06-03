@@ -1,3 +1,4 @@
+import { TokenStorageService } from './../_services/token-storage.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout'
@@ -15,9 +16,12 @@ export class Newmodule1Component implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!:MatSidenav;
 
-  constructor(private observer: BreakpointObserver) { }
+  currentUser: any;
+
+  constructor(private observer: BreakpointObserver, private token: TokenStorageService) { }
 
   ngAfterViewInit(){
+    this.currentUser = this.token.getUser();
     this.observer
     .observe(['(max-width: 800px)'])
     // .pipe(delay(1), untilDestroyed(this))
