@@ -3,6 +3,7 @@ package org.launchcode.tara.model;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -16,18 +17,21 @@ public class OccurrenceLog extends AbstractEntity{
     private User user;
 
 
-    private Instant date;
+    private LocalDate date;
 
     private String destressors;
 
+    private String description;
+
     public OccurrenceLog(){}
 
-    public OccurrenceLog(String location, String stressors, User user, String destressors) {
+    public OccurrenceLog(String location, String stressors, User user, String destressors, String description) {
         this.location = location;
         this.stressors = stressors;
         this.user = user;
-        this.date = Instant.now();
+        this.date = date.now();
         this.destressors = destressors;
+        this.description = description;
     }
 
     public OccurrenceLog(String location, Date date, String stressors, String destressors, User user) {
@@ -66,11 +70,19 @@ public class OccurrenceLog extends AbstractEntity{
         this.destressors = destressors;
     }
 
-    public Instant getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Instant date) {
+    public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

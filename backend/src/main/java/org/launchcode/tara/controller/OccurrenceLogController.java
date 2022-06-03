@@ -42,7 +42,8 @@ public class OccurrenceLogController {
                 occurrenceLogRequest.getLocation(),
                 occurrenceLogRequest.getStressors(),
                 user,
-                occurrenceLogRequest.getDestressors());
+                occurrenceLogRequest.getDestressors(),
+                occurrenceLogRequest.getDescription());
 
         occurrenceLogService.createOccurrenceLog(occurrenceLog);
         return occurrenceLog;
@@ -54,6 +55,18 @@ public class OccurrenceLogController {
         return repo.findAllByUserId(id);
     }
 
+    @GetMapping("/log/{userId}/{logId}")
+    public OccurrenceLog getOccurrenceById(@PathVariable int userid, @PathVariable int logId){return repo.getById(logId);}
 
+    @PatchMapping("/log/{id}")
+    public OccurrenceLog updateOccurrence(@PathVariable int id ,@RequestBody OccurrenceLogRequest occurrenceLogRequest){
+        User user = userRepository.getById(occurrenceLogRequest.getUserId());
+        OccurrenceLog occurrenceLog = repo.getById(id);
+        occurrenceLog.setDestressors(occurrenceLogRequest.getDestressors());
+        occurrenceLog.setStressors(occurrenceLogRequest.getStressors());
+        occurrenceLog.setLocation(occurrenceLogRequest.getLocation());
+        repo.save(occurrenceLog);
+        return occurrenceLog;
+    }
 
 }
