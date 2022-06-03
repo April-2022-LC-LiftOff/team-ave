@@ -7,6 +7,7 @@ public class OccurrenceLogRequest {
     private String location;
     private String stressors;
     private String destressors;
+    private String description;
     private int userId;
 
     public String getLocation() {
@@ -40,4 +41,8 @@ public class OccurrenceLogRequest {
     public void setUser(int userId) {
         this.userId = userId;
     }
+
+    public String getDescription() {return description;}
+
+    public void setDescription(String description) {this.description = description;}
 }
