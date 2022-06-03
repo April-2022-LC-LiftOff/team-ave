@@ -1,10 +1,11 @@
 export class Occurrence {
     id: number | undefined;
     location: string | undefined;
-    stressor: string | undefined;
+    stressors: string | undefined;
     user: string | undefined;
     date: Date | undefined;
-    deescalation: string | undefined;
+    destressors: string | undefined;
+    description: string | undefined;
 
     constructor(){}
 }

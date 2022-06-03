@@ -1,0 +1,21 @@
+.m-o-c {
+  background-color:#78938A;
+}
+
+.main-occurrences-container {
+    display: flex;
+    flex-direction:column;
+    max-width: 500px;
+    margin: auto;
+    padding-top: 50px;
+  }
+
+  .occurrence-list {
+    margin-top: 35px;
+    margin-bottom: 70px;
+  } 
+
+  app-occurrence-card {
+    display: block;
+    margin-bottom: 25px;
+}
