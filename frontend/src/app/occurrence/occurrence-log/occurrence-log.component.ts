@@ -34,6 +34,7 @@ export class OccurrenceLogComponent implements OnInit {
     if(this.token.getToken()){
       this.isLoggedIn = true;
       this.roles = this.token.getUser().roles;
+      this.currentUser = this.token.getUser();
     }
     if(!this.isLoggedIn){
       this._route.navigateByUrl('/login');
@@ -71,7 +72,7 @@ export class OccurrenceLogComponent implements OnInit {
         }
       )
     } 
-    this._route.navigateByUrl('/profile');
+    this._route.navigateByUrl('occurrence/list/' + this.currentUser.id);
   }
 
 }
