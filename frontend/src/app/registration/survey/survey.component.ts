@@ -29,11 +29,9 @@ export class SurveyComponent {
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   form: FormGroup;
-  allDonts: string[] = [];
 
   constructor(private fb: FormBuilder, private tagsService: TagsService, private token: TokenStorageService) {
     this.currentUser = this.token.getUser();
-    this.allDonts = this.currentUser.donts;
     this.form = this.fb.group({
       fruits: this.fb.array([], Validators.required),
       fruits2: this.fb.array([], Validators.required),

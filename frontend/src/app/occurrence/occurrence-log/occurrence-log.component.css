@@ -1,6 +1,17 @@
 .oc-container {
     max-width: 500px;
-    margin: auto;
-    margin-top: 50px;
     
+}
+
+.float-container {
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-100%, -100%);
+}
+
+.float-child {
+    float: left;
+    padding: 20px;
 }
