@@ -8,18 +8,21 @@ Tara app is an anxiety relief and tracking application that provides tools to th
 
 
 ## Dependencies
-(will add when finalized)
-
+JSON Web Token jjwt 0.9.1   
+Spring Boot Starter Data JPA, Web, Security, & Validation  
+MySQL Connector Java  
+Mapstruct 1.4.2  
+  
 ## Frameworks
-(will add to when finalized)
-Spring
+Angular 13  
+Spring Boot
 
 ## Database
 MySQL
 
-## languages used
-JavaScript,
-Java
+## Languages Used
+JavaScript  
+Java 11  
 
 ## Authors
 Tori Jameson,
