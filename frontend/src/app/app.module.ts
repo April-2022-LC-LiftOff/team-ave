@@ -11,14 +11,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AboutComponent } from './about/about.component';
-import { TrackerComponent } from './tracker/tracker.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
-import { ReviewOccurrenceComponent } from './review-occurrence/review-occurrence.component';
 
 import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CrisisComponent } from './crisis/crisis.component';
@@ -46,14 +42,10 @@ import { OccurrenceCardComponent } from './occurrence/occurrence-card/occurrence
     RegistrationComponent,
     FriendsComponent,
     AboutComponent,
-    TrackerComponent,
     OccurrenceComponent,
-    ReviewOccurrenceComponent,
     OccurrenceLogComponent,
     OccurrenceListComponent,
     ProfileComponent,
-    BoardAdminComponent,
-    BoardUserComponent,
     HeaderComponent,
     FooterComponent,
     CrisisComponent,

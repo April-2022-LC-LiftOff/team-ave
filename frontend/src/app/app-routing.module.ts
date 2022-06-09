@@ -9,11 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { OccurrenceComponent } from './occurrence/occurrence.component';
 import { OccurrenceLogComponent } from './occurrence/occurrence-log/occurrence-log.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { TrackerComponent } from './tracker/tracker.component';
 import { CrisisComponent } from './crisis/crisis.component';
-
-import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,12 +19,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'about', component: AboutComponent},
   { path: 'friends', component: FriendsComponent},
-  { path: 'tracker', component: TrackerComponent},
   { path: 'occurrence', component: OccurrenceComponent},
   { path: 'occurrence/log', component: OccurrenceLogComponent},
   { path: 'occurrence/list/:id', component: OccurrenceListComponent},
-  { path: 'user', component: BoardUserComponent },
-  { path: 'admin', component: BoardAdminComponent },
   { path: 'crisis', component: CrisisComponent},
   {
     path:'new-module', 

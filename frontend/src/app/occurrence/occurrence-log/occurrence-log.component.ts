@@ -1,6 +1,6 @@
 import { TokenStorageService } from './../../_services/token-storage.service';
 import { Component, OnInit } from '@angular/core';
-import { OccurrenceService } from 'src/app/service/occurrence.service';
+import { OccurrenceService } from 'src/app/_services/occurrence.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Occurrence } from 'src/app/occurrence';
 

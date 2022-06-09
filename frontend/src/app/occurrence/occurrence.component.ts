@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OccurrenceService } from '../service/occurrence.service';
+import { OccurrenceService } from '../_services/occurrence.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
