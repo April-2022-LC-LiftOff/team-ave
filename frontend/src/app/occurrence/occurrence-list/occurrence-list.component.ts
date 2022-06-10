@@ -24,6 +24,7 @@ export class OccurrenceListComponent implements OnInit {
   occurrences: Occurrence[]=[];
   filteredOccurrences: Occurrence[] = [];
   userId: number;
+  sorted = false;
 
   constructor( private logService : OccurrenceService, private _route: Router, private tokenStorage: TokenStorageService) { }
 
@@ -39,9 +40,6 @@ export class OccurrenceListComponent implements OnInit {
     this.generateOccurrenceList();
     this.filteredOccurrences = this.occurrences;
     console.log(this.occurrences)
-    
- 
-
   }
 
   generateOccurrenceList(){
@@ -54,6 +52,24 @@ export class OccurrenceListComponent implements OnInit {
     err => {
       this.errorMessage = err.error.message;
     })
+  }
+
+  sort() {
+    if (this.sorted) {
+      this.occurrences.sort(function (a, b) {
+        return a.id - b.id;
+      });
+      this.sorted = false;
+    } else {
+      this.occurrences.sort(function (a, b) {
+        return b.id - a.id;
+      });
+      this.sorted = true;
+    }
+  }
+
+  add() {
+    this._route.navigateByUrl('/occurrence/log');
   }
 
   filter(query: any){
@@ -123,7 +139,4 @@ export class OccurrenceListComponent implements OnInit {
       return bCount - aCount;
     })
   }
-
-
-
 }
