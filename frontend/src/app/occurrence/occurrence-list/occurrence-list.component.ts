@@ -56,12 +56,12 @@ export class OccurrenceListComponent implements OnInit {
 
   sort() {
     if (this.sorted) {
-      this.occurrences.sort(function (a, b) {
+      this.filteredOccurrences.sort(function (a, b) {
         return a.id - b.id;
       });
       this.sorted = false;
     } else {
-      this.occurrences.sort(function (a, b) {
+      this.filteredOccurrences.sort(function (a, b) {
         return b.id - a.id;
       });
       this.sorted = true;
