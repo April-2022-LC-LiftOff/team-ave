@@ -4,6 +4,10 @@
     <ul>
         <li *ngFor="let helper of currentUser.helpers">{{ helper }}</li>
     </ul>
+    <h4>Remember to avoid these!</h4>
+    <ul>
+        <li *ngFor="let dont of currentUser.donts">{{ dont }}</li>
+    </ul>
 </div>
 
 <div class="oc-container float-child">
