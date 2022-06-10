@@ -27,6 +27,10 @@
 
 
     }
+    .text-description{
+      display:flex;
+      align-content:flex-end;
+    }
     .text{
     display: flex;
     flex-direction:column;
@@ -38,17 +42,19 @@
         color:#F1DDBF;
         text-align:center;
         align-items:center;
-        padding:20px;
-        font-family: "Josefin Sans", sans-serif;
+        padding:30px;
+        font-family: "Josefin Sans", 
+        sans-serif;
+        font-size: 28px;
         font-weight: 350;
-        letter-spacing: 2px;
+        letter-spacing: 2.5px;
     }
 
     h3{
     font-family: "Josefin Sans", sans-serif;
     font-weight: 350;
     letter-spacing: 2px;
-    color:#525E75;
+    color:black;
     }
 
      h4{
@@ -58,5 +64,5 @@
              font-family: "Josefin Sans", sans-serif;
              font-weight: 60;
              letter-spacing: 1px;
-             color:#525E75;
+             color:black;
           }

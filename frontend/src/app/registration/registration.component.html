@@ -45,7 +45,8 @@
                [class.is-invalid]="cpassword.invalid && cpassword.touched">
         <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Passwords must be the same.</small>
       </div>
-      <div>
+      
+      <div >
 
         <label for="role">I am registering as...</label><br>
         <input type="radio" id="ndUser" name="role" value="ndUser" [(ngModel)]="form.role" #role="ngModel" checked="checked" required>
