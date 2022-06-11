@@ -20,6 +20,13 @@ a {
     padding: 1px 15px;
     margin: 0px;
 }
+.nav-item:hover{
+    text-shadow: 0 4px 4px #000;
+    
+}
+a:hover{
+    color: #000;
+}
 
 img{
     margin: auto;

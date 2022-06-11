@@ -9,6 +9,8 @@
     height: 100vh;
     background-color:#78938A;
     background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(57, 192, 237, 0.3)),
+    url(/assets/img/bg.jpg) center no-repeat;
   
   }
   
@@ -43,6 +45,32 @@
     right: 60px;
   }
   
+  
+
+span{
+    color:#525E75;
+    font-size: 19px;
+    cursor: pointer;
+    font-weight: 300;
+    text-shadow: 2px 2px tomato;
+  }
+  
+/* 
+.login-btn {
+    background-color: tomato;
+  }
+  
+  .signup-btn {
+    background-color: transparent;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
   .btn {
     width: 170px;
     padding: 10px 15px;
@@ -57,27 +85,57 @@
     border: 2px solid tomato;
     transition: transform 0.3s;
   }
+*/
 
-span{
-    color:#525E75;
-    font-size: 19px;
+  
+
+  /* About button */
+
+ 
+  
+  .btn {
+    width: 350px;
+    height: 100px;
+    background: linear-gradient(#96b5aa, #78938A);
+    border: none;
+    outline: none;
+    font-family: "Slabo 27px", serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 6px 6px #000;
     cursor: pointer;
-    font-weight: 300;
-    text-shadow: 2px 2px tomato;
+    transform: rotateX(70deg) rotateZ(30deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
   }
   
-  .login-btn {
-    background-color: tomato;
+  .btn::before {
+    content: "";
+    width: 100%;
+    height: 15px;
+    background-color: #78938A;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
   }
   
-  .signup-btn {
-    background-color: transparent;
+  .btn::after {
+    content: "";
+    width: 15px;
+    height: 100%;
+    background-color: #96b5aa;
+    ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateY(-90deg);
+    transform-origin: right;
   }
   
   .btn:hover {
-    transform: translateY(-2px);
-  }
-  
-  .btn:active {
-    transform: translateY(0);
+    transform: rotateX(30deg) rotateZ(0);
   }
