@@ -1,13 +1,27 @@
-.m-o-c {
-  background-color:#78938A;
+.float-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #78938A;
+  background-size: cover;
+  display:flex;
+  flex-direction:column;
+  padding:0;
+  margin:0;
+  color:#fff;
+  justify-content:center;
+  margin:0;
+  background-size: cover;
+  padding:30px;
+ 
 }
 
 .main-occurrences-container {
     display: flex;
     flex-direction:column;
-    max-width: 500px;
+    width: 400px;
     margin: auto;
     padding-top: 50px;
+    
   }
 
   .occurrence-list {
@@ -18,4 +32,8 @@
   app-occurrence-card {
     display: block;
     margin-bottom: 25px;
-}
+    background-color:#F1DDBF;
+    border-radius: 5%;
+    border: rgb(56, 180, 217);
+    border-style: solid;
+  border-width: 5px;}

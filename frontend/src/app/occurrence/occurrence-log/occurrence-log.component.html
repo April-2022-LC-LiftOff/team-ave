@@ -1,6 +1,8 @@
 <div class="float-container">
+
     <div class="float-child">
     <h4>If this is an ongoing occurrence, have these methods helped?</h4>
+
     <ul>
         <li *ngFor="let helper of currentUser.helpers">{{ helper }}</li>
     </ul>
@@ -29,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <label for="description">how would you describe the event?</label>
+            <label for="description">How would you describe the event?</label>
             <input type="textarea" class="form-control" placeholder="description" name="description" [(ngModel)]="form.description"> 
         </div>
         
