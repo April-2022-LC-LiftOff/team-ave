@@ -1,11 +1,13 @@
-<div class="float-container">
+<div class="m-o-c">
 <div class="main-occurrences-container">
-<h1> Occurrences for {{currentUser.username}}:</h1>
+<h4> Occurrences for {{currentUser.username}}:</h4>
 <div class="search-bar-container">
+    
     <div class="field">
         <input #filterInput class="input" type="text" (keyup)="filter($any($event.target).value)" placeholder="filter occurrences"/>
-        <button (click)="sort()">Sort</button>
-        <button (click)="add()">Add</button>
+        <button class="btn btn-outline-success"(click)="sort()">Sort</button>
+        <button class="btn btn-outline-success" (click)="add()">Add</button>
+
     </div>
 </div>
 

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ng-http-loader": "^12.0.0"
+  }
+}
