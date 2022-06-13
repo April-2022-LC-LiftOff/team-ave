@@ -37,7 +37,7 @@ export class OccurrenceLogComponent implements OnInit {
       this.currentUser = this.token.getUser();
     }
     if(!this.isLoggedIn){
-      this._route.navigateByUrl('/login');
+      this._route.navigateByUrl('/home');
     }
     this.route.params.subscribe((params:Params)=>{
       this.occurrence  = new Occurrence();
