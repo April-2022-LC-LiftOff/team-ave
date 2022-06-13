@@ -1,91 +1,118 @@
+<div class="container-survey">
 
-<h1>Welcome to Tara!</h1>
-<p>Take a moment to fill out this form to build your profile.<br>
-Tags can be separated with a comma or the enter key.</p>
+  <div class="survey-content ">
+
+<div class="welcome-text">
+  <h4>Welcome to Tara!</h4>
+  <p>Take a moment to fill out this form to build your profile.<br>
+  Tags can be separated with a comma or the enter key.</p>
+</div>
+    
+
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-  <h1> The following things raise my anxiety level, and so i would like my supporters to be more aware about them: </h1>
+  <div class="table">
 
-  <mat-form-field class="example-chip-list">
+    <div class="form-element">
+      <h4> The following things raise my anxiety level, and so i would like my supporters to be more aware about them: </h4>
+  
+      <mat-form-field class="example-chip-list">
+        <mat-chip-list
+          #chipList
+          aria-label="Fruit selection"
+          formArrayName="fruits"
+        >
+          <mat-chip
+            *ngFor="let fruit of fruitControls.value"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(fruit)"
+          >
+            {{fruit}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="Crowds, loud noises, school, etc..."
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)"
+          />
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+    
+  <div class="form-element">
+  
+    <h4>When I am anxious, the following things help me: </h4>
+  
+    <mat-form-field class="example-chip-list">
+      <mat-chip-list
+        #chipList2
+        aria-label="Fruit selection"
+        formArrayName="fruits2"
+      >
+        <mat-chip
+          *ngFor="let fruit of fruitControls2.value"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove2(fruit)"
+        >
+          {{fruit}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+        placeholder="Bring my fidget toy, help me breathe, give me space, etc..."
+          [matChipInputFor]="chipList2"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add2($event)"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+  
+  </div>
+    
+  <div class="form-element">
+  
+    <h4>When I am anxious, please do not do the following: </h4> 
+  
+    <mat-form-field class="example-chip-list">
     <mat-chip-list
-      #chipList
+      #chipList3
       aria-label="Fruit selection"
-      formArrayName="fruits"
+      formArrayName="fruits3"
     >
       <mat-chip
-        *ngFor="let fruit of fruitControls.value"
+        *ngFor="let fruit of fruitControls3.value"
         [selectable]="selectable"
         [removable]="removable"
-        (removed)="remove(fruit)"
+        (removed)="remove3(fruit)"
       >
         {{fruit}}
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
       </mat-chip>
       <input
-        placeholder="Crowds, loud noises, school, etc..."
-        [matChipInputFor]="chipList"
+        placeholder="Touch me, raise your voice, leave me alone, etc..."
+        [matChipInputFor]="chipList3"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
         [matChipInputAddOnBlur]="addOnBlur"
-        (matChipInputTokenEnd)="add($event)"
+        (matChipInputTokenEnd)="add3($event)"
       />
     </mat-chip-list>
   </mat-form-field>
-
-  <h1>When I am anxious, the following things help me: </h1>
-
-  <mat-form-field class="example-chip-list">
-    <mat-chip-list
-      #chipList2
-      aria-label="Fruit selection"
-      formArrayName="fruits2"
-    >
-      <mat-chip
-        *ngFor="let fruit of fruitControls2.value"
-        [selectable]="selectable"
-        [removable]="removable"
-        (removed)="remove2(fruit)"
-      >
-        {{fruit}}
-        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-      </mat-chip>
-      <input
-      placeholder="Bring my fidget toy, help me breathe, give me space, etc..."
-        [matChipInputFor]="chipList2"
-        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-        [matChipInputAddOnBlur]="addOnBlur"
-        (matChipInputTokenEnd)="add2($event)"
-      />
-    </mat-chip-list>
-  </mat-form-field>
-
-  <h1>When I am anxious, please do not do the following: </h1> 
-
-  <mat-form-field class="example-chip-list">
-  <mat-chip-list
-    #chipList3
-    aria-label="Fruit selection"
-    formArrayName="fruits3"
-  >
-    <mat-chip
-      *ngFor="let fruit of fruitControls3.value"
-      [selectable]="selectable"
-      [removable]="removable"
-      (removed)="remove3(fruit)"
-    >
-      {{fruit}}
-      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip>
-    <input
-      placeholder="Touch me, raise your voice, leave me alone, etc..."
-      [matChipInputFor]="chipList3"
-      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-      [matChipInputAddOnBlur]="addOnBlur"
-      (matChipInputTokenEnd)="add3($event)"
-    />
-  </mat-chip-list>
-</mat-form-field>
-
+  </div>
+    
+  
+  </div>
+  
 <button type="submit" class="btn ">Add my Tags!</button>
 </form>
+
+  </div>
+</div>
+
+
+
 

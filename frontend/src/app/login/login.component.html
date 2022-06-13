@@ -39,9 +39,18 @@
       </div>
 
     </form>
-    <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logged in as {{ (roles.includes('ROLE_USER') ? 'User' : 'Helper') }}
+
+    <!-- After login -->
+
+    <div  class="alert alert-success" *ngIf="isLoggedIn">
+
+      
+
+ Welcome ! 
+ Logged in as {{ (roles.includes('ROLE_USER') ? 'User' : 'Helper') }}
+     
     </div>
+    
   </div>
 
   <div class="box-1">

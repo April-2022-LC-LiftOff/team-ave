@@ -1,31 +1,31 @@
 .about-container {
-    position:absolute;
-    width: 100%;
-    height: 100vh;
-    background-color:#78938A;
-    background-size: cover;
-  
-  }
-  .about-text {
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-  }
-  .about-text h1 {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 80px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-  }
-  
-  .about-text p {
-    color: #eee;
-    font-family: "Josefin sans", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-align: right;
-  }
+  position:absolute;
+  width: 100%;
+  height: 100vh;
+  background-color:#78938A;
+  background-size: cover;
+
+}
+.about-text {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+.about-text h1 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 80px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  color: #eee;
+  font-family: "Josefin sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: right;
+}

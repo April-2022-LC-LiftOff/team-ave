@@ -1,11 +1,82 @@
 .example-chip-list {
     width: 100%;
   }
-  .survey-container{
-    position:absolute;
-    width: 100%;
-    height: 100vh;
-    background-color:#78938A;
-    background-size: cover;
-  
+
+  * {
+    margin: 0;
+    padding: 0;
   }
+  
+  .container-survey {
+    width: 100%;
+    /* height: 100vh; */
+    background-color: #78938A;
+    background-size: cover;
+    padding:0;
+    margin:0;
+    color:#fff;
+    justify-content:center;
+    /* display:flex;
+    flex-direction:column; */
+    margin:0;
+    background-size: cover;
+    padding:30px;
+  }
+
+  .survey-content{
+    width: 70%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    left: 70%;
+  }
+
+  .welcome-text{
+    padding: 50px;;
+    margin:30;
+    
+  }
+  .welcome-text h4 {
+    color: #0d3d2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  
+  .welcome-text p {
+    color: #eee;
+    font-family: "Josefin sans", sans-serif;
+    font-size: 25px;
+    font-weight:400;
+    letter-spacing: 1px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .btn {
+    width: 220px;
+    padding: 10px 15px;
+    margin: 60px;
+    margin-bottom: 120px;
+    border-radius: 50px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline: none;
+    color: #fff;
+    border: 2px solid tomato;
+    transition: transform 0.3s;
+    background-color: tomato;
+  }
+  .table{
+    color: #000;
+    /* background-color: rgb(103, 191, 191); */
+    /* border-radius: 15px; */
+  }
+  .form-element{
+    margin: 20px;
+    padding: 20px;
+  }
+  
